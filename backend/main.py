@@ -26,6 +26,20 @@ REVIEWS: List[Review] = []
 ORDERS: List[Order] = []
 USERS: List[User] = []
 
+# Seed a few demo products for the preview
+if not PRODUCTS:
+    demo = [
+        Product(id="1", title="Teal Silk Scarf", description="Premium silk scarf with subtle geometric pattern", price=1999, stock=25, images=["https://images.unsplash.com/photo-1520975916090-3105956dac38?q=80&w=1200&auto=format&fit=crop"], category="Fashion", rating=4.6),
+        Product(id="2", title="Wireless Earbuds Pro", description="ANC, 30h battery, IPX5", price=5999, stock=50, images=["https://images.unsplash.com/photo-1590658268037-6bf12165a8df?q=80&w=1200&auto=format&fit=crop"], category="Electronics", rating=4.4),
+        Product(id="3", title="Rose Glow Serum", description="Vitamin C + Hyaluronic acid", price=1299, stock=80, images=["https://images.unsplash.com/photo-1611930022073-b7a4ba5fcccd?q=80&w=1200&auto=format&fit=crop"], category="Beauty", rating=4.3),
+        Product(id="4", title="Minimalist Wall Lamp", description="Warm dimmable LED, matte gold", price=3499, stock=15, images=["https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?q=80&w=1200&auto=format&fit=crop"], category="Home Decor", rating=4.5),
+        Product(id="5", title="Prayer Mat – CloudSoft", description="Ultra-plush, anti-slip base", price=2499, stock=40, images=["https://images.unsplash.com/photo-1602453224934-5a4b63ac2b9f?q=80&w=1200&auto=format&fit=crop"], category="Islamic Essentials", rating=4.8),
+        Product(id="6", title="Hardcover Journal", description="120 GSM paper, gold-foil cover", price=799, stock=120, images=["https://images.unsplash.com/photo-1519681393784-d120267933ba?q=80&w=1200&auto=format&fit=crop"], category="Books", rating=4.2),
+        Product(id="7", title="Gift Set – Teal Gold", description="Scented candle + mug + card", price=1499, stock=30, images=["https://images.unsplash.com/photo-1519682577862-22b62b24e493?q=80&w=1200&auto=format&fit=crop"], category="Gifts", rating=4.1),
+        Product(id="8", title="Leather Card Holder", description="RFID-blocking, slim design", price=999, stock=60, images=["https://images.unsplash.com/photo-1617050351951-53c1ce9de2ef?q=80&w=1200&auto=format&fit=crop"], category="Accessories", rating=4.0),
+    ]
+    PRODUCTS.extend(demo)
+
 @app.get("/")
 def root():
     return {"message": "BlessedBuy API running"}
